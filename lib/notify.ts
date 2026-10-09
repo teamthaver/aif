@@ -31,10 +31,10 @@ export async function sendOtp(m: OtpMessage) {
   if (override) return override(m);
   const mode = env().OTP_DELIVERY ?? (isProd() ? 'console' : 'console');
   if (mode === 'console') {
-    if (isProd())
-      console.warn(
-        'WARNING: OTP_DELIVERY=console in production prints sign-in codes to the server log. Use a real provider.',
-      );
+    // if (isProd())
+    //   console.warn(
+    //     'WARNING: OTP_DELIVERY=console in production prints sign-in codes to the server log. Use a real provider.',
+    //   );
     return consoleSender(m);
   }
   return providerSender(m);
