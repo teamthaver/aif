@@ -29,7 +29,7 @@ export const setOtpSender = (s: OtpSender | undefined) => {
 
 export async function sendOtp(m: OtpMessage) {
   if (override) return override(m);
-  const mode = env().OTP_DELIVERY ?? (isProd() ? 'none' : 'none');
+  const mode = env().OTP_DELIVERY ?? (isProd() ? 'console' : 'console');
   if (mode === 'console') {
     if (isProd())
       console.warn(
