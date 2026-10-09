@@ -16,6 +16,12 @@ mysql -uroot -p -e "CREATE DATABASE aif_platform CHARACTER SET utf8mb4;
   CREATE USER 'aif'@'%'         IDENTIFIED BY 'YourStrongPassword1';
   GRANT ALL ON aif_platform.* TO 'aif'@'localhost'; GRANT ALL ON aif_platform.* TO 'aif'@'%';"
 
+mysql "CREATE DATABASE aif_platform CHARACTER SET utf8mb4;
+  CREATE USER 'aif'@'localhost' IDENTIFIED BY 'YourStrongPassword@1';
+  CREATE USER 'aif'@'%'         IDENTIFIED BY 'YourStrongPassword@1';
+  GRANT ALL ON aif_platform.* TO 'aif'@'localhost'; GRANT ALL ON aif_platform.* TO 'aif'@'%';"
+
+
 # 2. the app
 cp .env.example .env.local      # set DATABASE_URL, SESSION_SECRET, DATA_ENCRYPTION_KEY, SYSTEM_ADMIN_*
 npm install
