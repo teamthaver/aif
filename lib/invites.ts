@@ -18,4 +18,4 @@ export async function createInvite(c: Db, userId: string) {
 }
 // Invite links are only handed back to the browser outside production
 export const exposeToken = (t: string | null | undefined) =>
-  isProd() ? t : (t ?? undefined);
+  isProd() ? (t ?? undefined) : (t ?? undefined);
