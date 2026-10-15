@@ -3,8 +3,11 @@ import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
 
 export const metadata: Metadata = {
-  title: 'AIF Platform',
+  title: 'ThaverTech',
   description: 'Alternative investment fund administration',
+  icons: {
+    icon: "/logo.png"
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

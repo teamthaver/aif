@@ -41,4 +41,4 @@ export async function middleware(req: NextRequest) {
   // (against the database) whether to forward someone who is already signed in.
   return NextResponse.next();
 }
-export const config = { matcher: ['/((?!_next|favicon.ico).*)'] };
+export const config = { matcher: ['/((?!_next/|favicon.ico|.*\\.[a-zA-Z0-9]+$).*)'] };

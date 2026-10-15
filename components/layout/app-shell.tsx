@@ -3,6 +3,7 @@ import { RoleBadge } from '@/components/shared/badges';
 import type { Ctx } from '@/utils/types';
 import { SidebarNav, type NavItem } from './sidebar-nav';
 import { SignOutButton } from './sign-out-button';
+import Image from 'next/image';
 
 // The frame every role panel shares. Each panel passes its own navigation, and its own layout does
 // the session check.
@@ -21,8 +22,13 @@ export function AppShell({
     <div className="grid min-h-screen md:grid-cols-[250px_1fr]">
       <aside className="flex flex-col gap-6 bg-sidebar p-4 text-sidebar-foreground md:sticky md:top-0 md:h-screen">
         <div className="flex items-center gap-2 px-2 pt-1 text-lg font-semibold text-white">
-          <ShieldCheck className="size-6 text-emerald-400" />
-          AIF Platform
+          <Image
+            src={"/images/logo.png"}
+            height={24}
+            width={24}
+            alt='Logo'
+          />
+          ThaverTech
         </div>
         <SidebarNav items={nav} root={root} />
         <div className="mt-auto hidden border-t border-sidebar-border px-2 pt-4 text-xs text-sidebar-foreground/60 md:block">

@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const uuid = z.string().uuid();
 export const email = z.string().trim().toLowerCase().email('Enter a valid email').max(254);
-export const password = z.string().min(12, 'Use at least 12 characters').max(200);
+export const password = z.string().min(6, 'Use at least 6 characters').max(200);
 export const personName = z.string().trim().min(2, 'Enter a full name').max(100);
 
 export const loginSchema = z.object({ email, password: z.string().min(1, 'Enter your password') });

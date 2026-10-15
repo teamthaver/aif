@@ -2,6 +2,7 @@ import { ShieldCheck } from 'lucide-react';
 import { LoginForm } from '@/components/auth/login-form';
 import { redirectIfSignedIn } from '@/lib/sessionCheck';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
 
 // One shared sign-in for organization admins, fund managers, compliance managers, auditors and
 // investors. The role is read from the database after sign-in and the person is sent to their own
@@ -24,8 +25,13 @@ export default async function LoginPage({
       <Card className="w-full max-w-sm">
         <CardHeader>
           <div className="mb-2 flex items-center gap-2 font-semibold text-primary">
-            <ShieldCheck className="size-6" />
-            AIF Platform
+            <Image
+              src={"/images/logo.png"}
+              height={28}
+              width={28}
+              alt='Logo'
+            />
+            ThaverTech
           </div>
           <CardTitle className="text-xl">Sign in</CardTitle>
           <CardDescription className={reason === 'expired' ? 'font-medium text-amber-700' : ''}>

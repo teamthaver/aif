@@ -18,12 +18,12 @@ export function AcceptInviteForm({ token }: { token: string }) {
   }
   return (
     <form onSubmit={submit} className="grid gap-4">
-      <Field label="New password" htmlFor="a" hint="At least 12 characters.">
+      <Field label="New password" htmlFor="a" hint="At least 6 characters.">
         <Input
           id="a"
           type="password"
           autoComplete="new-password"
-          minLength={12}
+          minLength={6}
           required
           value={pw.a}
           onChange={(e) => setPw({ ...pw, a: e.target.value })}
@@ -34,7 +34,7 @@ export function AcceptInviteForm({ token }: { token: string }) {
           id="b"
           type="password"
           autoComplete="new-password"
-          minLength={12}
+          minLength={6}
           required
           value={pw.b}
           onChange={(e) => setPw({ ...pw, b: e.target.value })}
