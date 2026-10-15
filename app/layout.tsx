@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'ThaverTech',
   description: 'Alternative investment fund administration',
   icons: {
-    icon: "/logo.png"
+    icon: "/images/logo.png"
   }
 };
 
